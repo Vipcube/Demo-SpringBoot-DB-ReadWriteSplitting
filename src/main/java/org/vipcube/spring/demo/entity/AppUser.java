@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class AppUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 }
