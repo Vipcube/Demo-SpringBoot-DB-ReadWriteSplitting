@@ -2,11 +2,8 @@ spring:
   application:
     name: demo-db-read-write
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: 123456
+  profiles:
+    active: @activeProfile@
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -14,4 +11,28 @@ spring:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
 
+---
+spring:
+  config:
+    activate:
+      on-profile: direct
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
+
+---
+spring:
+  config:
+    activate:
+      on-profile: proxy
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
