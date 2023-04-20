@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  shardingsphere-proxy:
+    image: apache/shardingsphere-proxy:5.1.2
+    hostname: proxy
+    ports:
+      - "3307:3307"
+    environment:
+      PORT: 3307 # default is 3307
+    volumes:
+      - ./conf:/opt/shardingsphere-proxy/conf
+      - ./proxy-lib:/opt/shardingsphere-proxy/ext-lib
+    networks:
+      - database
+
+networks:
+  database:
+    external: true

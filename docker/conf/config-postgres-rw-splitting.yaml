@@ -1,0 +1,26 @@
+schemaName: postgres_rw
+
+dataSources:
+  master:
+    url: jdbc:postgresql://postgresql-master:5432/postgres
+    username: postgres
+    password: 123456
+
+  slave:
+    url: jdbc:postgresql://postgresql-slave:5432/postgres
+    username: postgres
+    password: 123456
+
+rules:
+  - !READWRITE_SPLITTING
+    dataSources:
+      readwrite:
+        type: Static
+        props:
+          write-data-source-name: master
+          read-data-source-names: slave
+        loadBalancerName: robin
+
+    loadBalancers:
+      robin:
+        type: ROUND_ROBIN
