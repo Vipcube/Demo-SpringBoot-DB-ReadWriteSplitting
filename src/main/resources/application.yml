@@ -22,9 +22,20 @@ spring:
     hibernate:
       ddl-auto: update
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: 123456
+
+datasource:
+  driver-class-name: org.postgresql.Driver
+  master:
     url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
+  slave:
+    url: jdbc:postgresql://localhost:5433/postgres
     username: postgres
     password: 123456
 
