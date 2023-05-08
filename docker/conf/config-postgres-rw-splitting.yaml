@@ -23,4 +23,4 @@ rules:
 
     loadBalancers:
       robin:
-        type: ROUND_ROBIN
+        type: TRANSACTION_ROUND_ROBIN
