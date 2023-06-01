@@ -1,6 +1,6 @@
 # The Demo of Read/Write Split with SpringBoot
 
-## Setup Database Partitioning with Docker
+## Setup Database Replication with Docker
 
 ### Startup the Database.
 
@@ -8,7 +8,7 @@
 docker-compose up -d
 ```
 
-### Setup Database Partitioning Role
+### Setup Database Replication Role
 
 - Access the psql client
 
