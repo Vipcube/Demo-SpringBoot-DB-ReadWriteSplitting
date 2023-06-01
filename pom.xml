@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>org.vipcube.spring</groupId>
-	<artifactId>demo-spring-db-read-write-spliting</artifactId>
+	<artifactId>demo-spring-db-read-write-splitting</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

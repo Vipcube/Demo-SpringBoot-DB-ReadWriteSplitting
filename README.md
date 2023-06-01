@@ -1,4 +1,4 @@
-# The Demo of Read/Write Split with SpringBoot
+# The Demo of Read/Write Splitting with SpringBoot
 
 ## Setup Database Replication with Docker
 
